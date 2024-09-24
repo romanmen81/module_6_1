@@ -4,6 +4,14 @@ class Animal:
         self.fed = False   # Накормленный
         self.name = name   # Имя животного
 
+    def eat(self, food):
+        if food.edible:
+            print(f"{self.name} съел {food.name}")
+            self.fed = True
+        else:
+            print(f"{self.name} не стал есть {food.name}")
+            self.alive = False
+
 
 class Plant:
     def __init__(self, name):
@@ -12,23 +20,11 @@ class Plant:
 
 
 class Mammal(Animal):
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+    pass  # Здесь мы убираем метод eat, так как он теперь есть в Animal
 
 
 class Predator(Animal):
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+    pass  # Здесь мы убираем метод eat, так как он теперь есть в Animal
 
 
 class Flower(Plant):
